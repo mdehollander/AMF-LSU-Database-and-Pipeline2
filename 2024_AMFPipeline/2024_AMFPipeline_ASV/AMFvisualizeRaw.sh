@@ -11,7 +11,8 @@
 SCRIPT_DIR=$1
 
 ### Activate conda
-. ~/.bashrc
+#. ~/.bashrc
+source $HOME/miniforge3/etc/profile.d/conda.sh
 conda activate $C_ENV
 
 # Define a temporary folder
@@ -31,4 +32,4 @@ qiime demux summarize \
   --o-visualization ./visualize_raw.qzv
 
 # Delete temporary folder
-rm -r $SCRIPT_DIR/tmp/
+#rm -r $SCRIPT_DIR/tmp/
