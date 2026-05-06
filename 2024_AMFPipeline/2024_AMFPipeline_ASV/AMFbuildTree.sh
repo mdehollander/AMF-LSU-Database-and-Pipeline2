@@ -9,7 +9,7 @@
 #SBATCH --array=1-11
 
 ### Activate conda 
-. ~/.bashrc
+source $HOME/miniforge3/etc/profile.d/conda.sh
 conda activate $C_ENV
 
 echo "debug1"

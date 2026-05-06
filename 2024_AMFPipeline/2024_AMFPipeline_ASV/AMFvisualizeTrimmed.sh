@@ -11,7 +11,7 @@
 SCRIPT_DIR=$1
 
 ### Activate conda
-. ~/.bashrc
+source $HOME/miniforge3/etc/profile.d/conda.sh
 conda activate $C_ENV
 
 # Define a temporary folder

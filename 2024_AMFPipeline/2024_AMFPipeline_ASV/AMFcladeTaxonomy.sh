@@ -8,7 +8,7 @@
 #SBATCH --job-name=AMFcladeTaxonomy.out
 
 ### Activate conda
-. ~/.bashrc
+source $HOME/miniforge3/etc/profile.d/conda.sh
 conda activate $C_ENV
 
 Rscript AMFcladeTaxonomy.R
