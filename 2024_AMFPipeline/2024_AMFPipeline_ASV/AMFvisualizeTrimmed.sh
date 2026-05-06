@@ -31,4 +31,4 @@ qiime demux summarize \
   --o-visualization ./visualize_trimmed.qzv
 
 # Delete temporary folder
-rm -r $SCRIPT_DIR/tmp/
+# rm -r $SCRIPT_DIR/tmp/

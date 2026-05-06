@@ -66,4 +66,4 @@ rm aligned_R1.BLAST_ASVplusV18_052025_cut.qza
 rm aligned_R2.BLAST_ASVplusV18_052025_cut.qza
 
 # Delete temporary folder
-rm -r $SCRIPT_DIR/tmp/
+# rm -r $SCRIPT_DIR/tmp/

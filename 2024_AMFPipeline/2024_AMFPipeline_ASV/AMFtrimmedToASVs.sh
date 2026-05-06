@@ -99,7 +99,7 @@ rm S.BLAST.R2.ASVrepseqs_clean.txt
 rm BLAST.R1_R2.ASVrepseqs_clean_cut.tsv 
 rm R1.ASVrepseqs_clean.fasta 
 rm R2.ASVrepseqs_clean.fasta 
-rm -r $SCRIPT_DIR/tmp/
+#rm -r $SCRIPT_DIR/tmp/
 
 echo;echo "Sequences and ASV table subset to BLAST positive ASVs"
 

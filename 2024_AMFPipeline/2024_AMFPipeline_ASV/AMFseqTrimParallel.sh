@@ -6,7 +6,7 @@
 #SBATCH --job-name=trimseqs
 
 ### Activate conda
-. ~/.bashrc
+source $HOME/miniforge3/etc/profile.d/conda.sh
 conda activate $C_ENV
 
 # Script to trim primer sequences

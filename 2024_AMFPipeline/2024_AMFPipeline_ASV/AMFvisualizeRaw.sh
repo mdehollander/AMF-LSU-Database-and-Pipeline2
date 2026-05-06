@@ -16,7 +16,7 @@ source $HOME/miniforge3/etc/profile.d/conda.sh
 conda activate $C_ENV
 
 # Define a temporary folder
-mkdir $SCRIPT_DIR/tmp/
+mkdir -p $SCRIPT_DIR/tmp/
 export TMPDIR=$SCRIPT_DIR/tmp/
 
 # 1.  Create qza object of raw reads
