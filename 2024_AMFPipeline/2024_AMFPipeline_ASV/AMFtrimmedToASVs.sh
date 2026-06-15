@@ -19,21 +19,21 @@ mkdir $SCRIPT_DIR/tmp/
 export TMPDIR=$SCRIPT_DIR/tmp/
 
 # Replace placeholder text in R script with user-provided truncation lengths for R1 and R2: DADA2
-cat AMFdada2.R | sed "s/R1trunclen.value/$R1cutoff/" | sed "s/R2trunclen.value/$R2cutoff/" > AMFdada2withCutoffs.R
+#cat AMFdada2.R | sed "s/R1trunclen.value/$R1cutoff/" | sed "s/R2trunclen.value/$R2cutoff/" > AMFdada2withCutoffs.R
 
 # Run DADA2 pipeline
-echo;echo "Beginning DADA2 pipeline..."
-Rscript AMFdada2withCutoffs.R
-echo;echo "DADA2 pipeline complete. Converting output files to Qiime format..."
-rm AMFdada2withCutoffs.R # remove temporary script once it's done running
+#echo;echo "Beginning DADA2 pipeline..."
+#Rscript AMFdada2withCutoffs.R
+#echo;echo "DADA2 pipeline complete. Converting output files to Qiime format..."
+#rm AMFdada2withCutoffs.R # remove temporary script once it's done running
 
 # Convert ASV table from .tsv format to .biom format
-biom convert -i ./dada2output/ASVtable.tsv -o ./q2files/ASVtable.biom --to-json --table-type="OTU table"
+biom convert -i ./q2files//ASV_table.tsv -o ./q2files/ASVtable.biom --to-json --table-type="OTU table"
 
 # Convert ASV table from .biom to .qza, ASV sequences from .fasta to .qza
 qiime tools import --input-path ./q2files/ASVtable.biom --type 'FeatureTable[Frequency]' --input-format BIOMV100Format --output-path ./q2files/ASVtable.qza
 
-qiime tools import --input-path ./dada2output/ASVs.fasta --type 'FeatureData[Sequence]' --output-path ./q2files/ASVseqs.qza
+qiime tools import --input-path ./q2files/ASV_seqs.fasta --type 'FeatureData[Sequence]' --output-path ./q2files/ASVseqs.qza
 
 # Convert reference database from .fasta to .qza
 qiime tools import --input-path ./V18_LSUDB_052025.fasta --type 'FeatureData[Sequence]' --output-path ./q2files/AMFreferenceSeqs.qza
