@@ -115,11 +115,12 @@ head(track)
 ####### write outputs #######
 
 # Give sequence headers more manageable names (ASV_1, ASV_2...)
+# And add a md5 hash of the rep sequence as well, like qiime and ampliseq do this
 asv_seqs <- colnames(seqtab.nochim)
 asv_headers <- vector(dim(seqtab.nochim)[2], mode="character")
 
 for (i in 1:dim(seqtab.nochim)[2]) {
-asv_headers[i] <- paste(">ASV", i, sep="_")
+asv_headers[i] <- paste(">ASV", i, digest(colnames(seqtab.nochim)[i], algo='md5', serialize = FALSE), sep="_")
 }
 
 # making and writing out a fasta of our final ASV seqs:
