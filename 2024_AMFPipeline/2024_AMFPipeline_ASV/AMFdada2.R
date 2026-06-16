@@ -4,6 +4,7 @@ library(dada2)
 library(ShortRead)
 library(Biostrings)
 library(stringr)
+library(digest)
 
 ####### File parsing #######
 
