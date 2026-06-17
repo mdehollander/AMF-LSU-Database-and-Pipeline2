@@ -1,5 +1,6 @@
 # Quick Start 
 
+```
 pixi exec nextflow run nf-core/ampliseq -r 2.15.0 -params-file nf-params.json --skip_dada_taxonomy
 
 bash AMFrenameASVs.sh
@@ -17,6 +18,6 @@ pixi exec gappa examine graft --jplace-path AMFtree.ENVbackbone/epa_result.jplac
 bash AMFcladesExtract.sh
 
 bash AMFcladeTaxonomy.sh
-
+```
 
 
