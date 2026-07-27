@@ -1,6 +1,8 @@
 # Quick Start 
 
 ```
+export C_ENV="amf_pipeline"
+
 pixi exec nextflow run nf-core/ampliseq -r 2.15.0 -params-file nf-params.json --skip_dada_taxonomy
 
 bash AMFrenameASVs.sh
